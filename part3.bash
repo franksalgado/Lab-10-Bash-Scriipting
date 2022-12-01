@@ -12,12 +12,12 @@ filename=$1
 hash=$2
 
 if [ ! -f $filename ]; then
-    rror()
+    error()
     echo "File $filename doesn't exist"
 
 elif [ "$(get_md5sum $filename)" = "$filehash" ]; then
-    echo "Success: $filename matches provided md5sum"
+    echo "Success: $filename is the same"
 else
     error()
-    echo "$filename doesn't match provided md5sum" 
+    echo "$filename has been altered" 
 fi
